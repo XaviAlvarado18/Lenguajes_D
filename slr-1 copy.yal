@@ -1,0 +1,29 @@
+(* Lexer para Gramática No. 1 - Expresiones aritméticas simples para variables *)
+
+(* Introducir cualquier header aqui *)
+
+let delim = [' ''\t''\n']
+let ws = delim+
+let letter = ['A'-'Z''a'-'z']
+let digit = ['0'-'9']
+let id = letter(letter|digit)*
+
+
+rule tokens = 
+    ws		  { return WHITESPACE }
+  | id        { 
+  import graphviz
+  -dot=graphviz.Graph()-dot.node('A')-dot.node('B')-dot.node('C')-dot.edge('A', 'B')-dot.edge('B', 'C')-dot.edge('C', 'A')-dot.render('grafica', format='png')
+  }               (* Cambie por una acción válida, que devuelva el token *)
+  | '+'       { 
+    import matplotlib.pyplot as plt 
+    -x = [1, 2, 3, 4, 5]-y = [2, 3, 5, 7, 11]-plt.plot(x, y, marker='o')-plt.title('Gráfico Simple')-plt.xlabel('Eje X')-plt.ylabel('Eje Y')-plt.show()
+  }
+  | '*'       { 
+    import turtle 
+    -t = turtle.Turtle()-t.pendown()-t.color('blue')-t.forward(50)-t.hideturtle()-turtle.done()
+   }
+  | '('       { return LPAREN }
+  | ')'       { return RPAREN }
+
+(* Introducir cualquier trailer aqui *)
