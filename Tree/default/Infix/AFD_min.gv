@@ -1,0 +1,10 @@
+// AFN
+digraph {
+	rankdir=LR
+	label="AFD minimized"
+	3124216308656 [label=Q0 shape=circle]
+	3124216308656 -> 3124216308656 [label=b]
+	3124216308656 -> 3124216308656 [label=a]
+	3124216308416 [label=Q1 shape=doublecircle]
+	3124216308656 -> 3124216308416 [label=c]
+}
